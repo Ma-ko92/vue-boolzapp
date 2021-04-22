@@ -1,13 +1,18 @@
 var app = new Vue({
-
+    
+    // Element ID
     el: "#root",
 
     data:{
+        // Index
+        thisIndex: 0,
+
         // User personal Profile
         userProfile: {
             name: "Giovanna D'arco",
             avatar: "_io"
         },
+
         // User Contacts
         contacts: [
             {

@@ -79,7 +79,7 @@
                             <div class="user_chats">
                                 <ul>
                                     <!-- List of Contacts -->
-                                    <li v-for="(contacts, avatar) in contacts" class="text">
+                                    <li v-for="(contacts, avatar) in contacts" @click="thisIndex = index" class="text">
                                         <div class="contacts_info">
                                             <img :src="'img/avatar' + contacts.avatar + '.jpg'" alt="avatar">
                                             <span>{{contacts.name}}</span>
@@ -93,7 +93,32 @@
 
                         <!-- Message Interface -->
                         <div class="message_interface">
+                            <div class="user_option_container border_left">
+                                <div class="user_avatar">
+                                    <img :src="'img/avatar' + userProfile.avatar + '.jpg'" alt="my_avatar">
+                                    <!-- User name -->
+                                    <div class="text">{{userProfile.name}}</div>
+                                </div>
+                                <!-- Option area -->
+                                <div class="user_option opacity">
+                                    <i class="fas fa-search"></i>
+                                    <i class="fas fa-paperclip"></i>
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </div>
+                            </div>
 
+                            <!-- Message Area -->
+                            <div class="message_container">
+                                
+                            </div>
+
+                            <!-- Input message area -->
+                            <div class="text_input">
+                                <i class="far fa-smile"></i>
+                                <label for="message_txt"></label>
+                                <input id="message_txt" type="text" placeholder="Scrivi un messaggio">
+                                <i class="fas fa-microphone"></i>
+                            </div>
                         </div>
                         <!-- Message Interface -->
                     </div>
