@@ -3,6 +3,12 @@ var app = new Vue({
     el: "#root",
 
     data:{
+        // User personal Profile
+        userProfile: {
+            name: "Giovanna D'arco",
+            avatar: "_io"
+        },
+        // User Contacts
         contacts: [
             {
                 name: 'Michele',

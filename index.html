@@ -19,39 +19,39 @@
 <body>
     <!-- Wrapper -->
     <div class="wrapper">
-        <!-- Style element -->
-        <div class="bg_style_top"></div>
-        <div class="bg_style_bottom"></div>
-
         <!-- Container -->
         <div class="container">
             <!-- Vue Container -->
             <div id="root">
                 <!-- MAIN -->
                 <main>
+                    <!-- Inner Container -->
                     <div class="inner_container">
+                        <!-- User Interface -->
                         <div class="user_interface">
+                            <!-- User Option -->
                             <div class="user_option_container">
+                                <!-- Avatar area -->
                                 <div class="user_avatar">
-                                    <img src="img/avatar_io.jpg" alt="my_avatar">
+                                    <img :src="'img/avatar' + userProfile.avatar + '.jpg'" alt="my_avatar">
                                     <!-- User name -->
-                                    <div class="text">Nome Utente</div>
+                                    <div class="text">{{userProfile.name}}</div>
                                 </div>
-
-                                
-
+                                <!-- Option area -->
                                 <div class="user_option opacity">
                                     <i class="fas fa-circle-notch"></i>
                                     <i class="fas fa-comment-alt"></i>
                                     <i class="fas fa-ellipsis-v"></i>
                                 </div>
                             </div>    
+                            <!-- User Option End -->
 
+                            <!-- Notify area -->
                             <div class="user_notify">
                                 <div class="notify_icon">
                                     <i class="fas fa-bell-slash"></i>
                                 </div> 
-
+                                <!-- Option -->
                                 <div class="notify_text">
                                     <div class="text">
                                         Ricevi notifiche di nuovi messaggi
@@ -59,24 +59,45 @@
                                     <a href="#">Attiva notifiche desktop</a>
                                 </div>
                             </div>
+                            <!-- Notify area End -->
 
+                            <!-- Search filter area -->
                             <div class="search_area">
                                 <div class="search_container">
                                     <div class="search_icon">
                                         <i class="fas fa-search opacity"></i>
                                     </div>
-                                    <div>
-                                        <label for="user_filter"></label>
-                                        <input id="user_filter" type="text" placeholder="Cerca o inizia una nuova chat">
-                                    </div>
+
+                                    <!-- Input area -->
+                                    <label for="user_filter"></label>
+                                    <input id="user_filter" type="text" placeholder="Cerca o inizia una nuova chat">
                                 </div>
                             </div>
-                        </div>
+                            <!-- Search filter area End-->
 
+                            <!-- User chat area -->
+                            <div class="user_chats">
+                                <ul>
+                                    <!-- List of Contacts -->
+                                    <li v-for="(contacts, avatar) in contacts" class="text">
+                                        <div class="contacts_info">
+                                            <img :src="'img/avatar' + contacts.avatar + '.jpg'" alt="avatar">
+                                            <span>{{contacts.name}}</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- User chat area End-->
+                        </div>
+                        <!-- User Interface End -->
+
+                        <!-- Message Interface -->
                         <div class="message_interface">
 
                         </div>
+                        <!-- Message Interface -->
                     </div>
+                    <!-- Inner Container -->
                 </main>
                 <!-- MAIN END -->
             </div>
