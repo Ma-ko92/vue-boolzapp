@@ -169,6 +169,20 @@ img{
 .message_container{
     background-image: url(../img/mine.jpg);
     flex-grow: 1;
+    padding: 20px;
+}
+.message_sent{
+    background-color: #D5F9BA;
+    padding: 10px;
+    border-radius: 10px;
+    width: 40%;
+    margin-left: auto;
+}
+.message_recived{
+    background-color: white;
+    padding: 10px;
+    width: 40%;
+    border-radius: 10px;
 }
 
 /* Text Input */

@@ -5,12 +5,12 @@ var app = new Vue({
 
     data:{
         // Index
-        thisIndex: 0,
+        activeContact: 0,
 
         // User personal Profile
         userProfile: {
-            name: "Giovanna D'arco",
-            avatar: "_io"
+            name: "Mario",
+            avatar: "_7"
         },
 
         // User Contacts
@@ -83,7 +83,7 @@ var app = new Vue({
             },
             {
                 name: 'Luisa',
-                avatar: '_4',
+                avatar: '_6',
                 visible: true,
                 messages: [
                     {
