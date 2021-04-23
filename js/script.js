@@ -12,6 +12,9 @@ var app = new Vue({
             name: "Mario",
             avatar: "_7"
         },
+        // User message input
+        newMessageText: "",
+
 
         // User Contacts
         contacts: [
@@ -99,5 +102,39 @@ var app = new Vue({
                 ],
             },
         ]
+    },
+
+    // Function
+    methods: {
+        // this function will record the message entered by the user
+        // via input and insert it into an object with its properties.
+        newMessage() {
+            let thisChat = this.contacts[this.activeContact];
+            if(this.newMessageText != " "  && this.newMessageText.length > 0  ) {
+                thisChat.messages.push(
+                {
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                    text: this.newMessageText,
+                    status: 'sent'
+                }
+                )
+
+                setTimeout(() => {
+                    thisChat.messages.push(
+                      {
+                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                        text: "ok",
+                        status: "received"
+                      }
+                    )
+                  }, 1000);
+
+                  this.newMessageText = "";
+            }
+
+            
+            
+        }   
+             
     }
 });

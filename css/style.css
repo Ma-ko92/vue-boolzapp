@@ -170,6 +170,7 @@ img{
     background-image: url(../img/mine.jpg);
     flex-grow: 1;
     padding: 20px;
+    overflow-y: auto;
 }
 .messages_box{
     padding: 20px 0px;
