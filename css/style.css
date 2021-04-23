@@ -127,12 +127,12 @@ img{
 /* User Chat area */
 .user_chats{
     background-color: white;
-    padding: 10px;
     height: 100%;
     overflow: hidden;
     overflow-y: auto;
 }
 .user_chats ul li{
+    padding: 10px;
     list-style-type: none;
     border-bottom: 1px solid #eaeaea ;
     cursor: pointer;
