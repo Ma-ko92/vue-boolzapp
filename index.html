@@ -79,10 +79,10 @@
                             <div class="user_chats">
                                 <ul>
                                     <!-- List of Contacts -->
-                                    <li v-for="(contacts, avatar) in contacts" @click="thisIndex = index" class="text">
+                                    <li v-for="(contact, index) in contacts" @click="activeContact = index" class="text" :class="{ 'active': index === activeContact }">
                                         <div class="contacts_info">
-                                            <img :src="'img/avatar' + contacts.avatar + '.jpg'" alt="avatar">
-                                            <span>{{contacts.name}}</span>
+                                            <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+                                            <span>{{contact.name}}</span>
                                         </div>
                                     </li>
                                 </ul>
@@ -94,10 +94,10 @@
                         <!-- Message Interface -->
                         <div class="message_interface">
                             <div class="user_option_container border_left">
-                                <div class="user_avatar">
-                                    <img :src="'img/avatar' + userProfile.avatar + '.jpg'" alt="my_avatar">
+                                <div  class="user_avatar" >
+                                    <img :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'" :alt="contacts[activeContact].name">
                                     <!-- User name -->
-                                    <div class="text">{{userProfile.name}}</div>
+                                    <div class="text">{{contacts[activeContact].name}}</div>
                                 </div>
                                 <!-- Option area -->
                                 <div class="user_option opacity">
@@ -108,22 +108,13 @@
                             </div>
 
                             <!-- Message Area -->
-                            <div class="message_container">
-                                <!-- Sent message -->
-                                <div class="sent">
-                                    <div class="message_sent">
-                                        
-                                        <div class="message_date"></div>
+                            <div class="messages_container" >
+                                <div v-for="message in contacts[activeContact].messages" class="messages_box">
+                                    <!-- Message Box -->
+                                    <div class="message_box" :class="message.status" >
+                                        {{message.text}}
+                                        <div class="message_date">{{message.date}}</div>
                                     </div>
-                                </div>
-
-                                <!-- Recived message -->
-                                <div class="recived">
-                                    <div class="message_recived">
-                                    
-                                        <div class="message_date"></div>
-                                    </div>
-                                    
                                 </div>
                             </div>
 

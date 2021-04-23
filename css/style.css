@@ -72,6 +72,9 @@ img{
     font-size: 15px;
     font-weight: bold;
 }
+.active{
+    background-color: #e9ebeb;
+}
 
 /* User notify */
 .user_notify{
@@ -137,9 +140,6 @@ img{
     border-bottom: 1px solid #eaeaea ;
     cursor: pointer;
 }
-.user_chats ul li.active{
-    background-color: gray;
-}
 .user_chats ul li:last-child{
     border-bottom: none;
 }
@@ -166,30 +166,34 @@ img{
 }
 
 /* Message area */
-.message_container{
+.messages_container{
     background-image: url(../img/mine.jpg);
     flex-grow: 1;
     padding: 20px;
+}
+.messages_box{
+    padding: 20px 0px;
+}
+.message_box{
+    padding: 15px;
+    border-radius: 10px;
+    width: 50%;
     position: relative;
 }
-.message_sent{
+.message_box.sent{
     background-color: #D5F9BA;
-    padding: 15px;
-    border-radius: 10px;
-    width: 40%;
     margin-left: auto;
 }
-.message_recived{
+.message_box.received{
     background-color: white;
-    padding: 15px;
-    width: 40%;
-    border-radius: 10px;
 }
 .message_date{
     font-size: 10px;
     opacity: 0.5;
     float: right;
-    margin-top: 2px;
+    position: absolute;
+    bottom: 3px;
+    right: 10px;
 }
 
 /* Text Input */
