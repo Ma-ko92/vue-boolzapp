@@ -127,7 +127,7 @@ img{
     padding: 5px 0px;
 }
 
-/* User Chat area */
+/* User contacts area */
 .user_chats{
     background-color: white;
     height: 100%;
@@ -181,6 +181,9 @@ img{
     width: 50%;
     position: relative;
 }
+.message_box:hover .ms_chevron{
+    display: block;
+}
 .message_box.sent{
     background-color: #D5F9BA;
     margin-left: auto;
@@ -196,8 +199,38 @@ img{
     bottom: 3px;
     right: 10px;
 }
+/* Message options */
+.ms_chevron{
+    opacity: 0.2;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    display: none;
+}
+.message_option ul{
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgb(0 0 0 / 30%);
+    position: absolute;
+    top: 30px;
+    right: 3px;
+    z-index: 1;
+    display: none;
+}
+.message_option ul.show{
+    display: block;
+}
+.message_option ul li{
+    list-style-type: none;
+    cursor: pointer;
+    margin: 5px 0px;
+}
 
-/* Text Input */
+
+
+/* Message Input */
 .text_input{
     display: flex;
     flex-direction: row;

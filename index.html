@@ -33,7 +33,7 @@
                             <div class="user_option_container">
                                 <!-- Avatar area -->
                                 <div class="user_avatar">
-                                    <img :src="'img/avatar' + userProfile.avatar + '.jpg'" alt="my_avatar">
+                                    <img :src="'img/avatar' + userProfile.avatar + '.jpg'" alt="userProfile.name">
                                     <!-- User name -->
                                     <div class="text">{{userProfile.name}}</div>
                                 </div>
@@ -70,7 +70,7 @@
 
                                     <!-- Input area -->
                                     <label for="user_filter"></label>
-                                    <input id="user_filter" type="text" placeholder="Cerca o inizia una nuova chat">
+                                    <input id="user_filter" type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchTextFilter" @keyUp="searchFilter">
                                 </div>
                             </div>
                             <!-- Search filter area End-->
@@ -79,7 +79,12 @@
                             <div class="user_chats">
                                 <ul>
                                     <!-- List of Contacts -->
-                                    <li v-for="(contact, index) in contacts" @click="activeContact = index" class="text" :class="{ 'active': index === activeContact }">
+                                    <li v-for="(contact, index) in contacts"
+                                        v-if="contact.visible"
+                                        @click="activeContact = index" 
+                                        class="text" 
+                                        :class="{ 'active': index === activeContact }"
+                                        >
                                         <div class="contacts_info">
                                             <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
                                             <span>{{contact.name}}</span>
@@ -109,11 +114,33 @@
 
                             <!-- Message Area -->
                             <div class="messages_container" >
-                                <div v-for="message in contacts[activeContact].messages" class="messages_box">
+                                <div v-for="(message, index) in contacts[activeContact].messages" class="messages_box">
                                     <!-- Message Box -->
                                     <div class="message_box" :class="message.status" >
+                                        <!-- Text message -->
                                         {{message.text}}
+                                        <!-- Date message -->
                                         <div class="message_date">{{message.date}}</div>
+
+                                        <!-- chevron dropdown message option -->
+                                        <div class="message_option">
+                                            <!-- Chevron icon -->
+                                            <div class="ms_chevron" @click="menuDropdown(index)">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </div>
+
+                                            <!-- Menu dropdown -->
+                                            <div class="message_option" >
+                                                <ul>
+                                                    <li>
+                                                        Info
+                                                    </li>
+                                                    <li>
+                                                        Elimina
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
