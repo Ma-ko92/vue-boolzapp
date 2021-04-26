@@ -175,6 +175,11 @@ var app = new Vue({
             }
         
         
+        },
+
+        deleteMessage(msgIndex) {
+            this.contacts[this.activeContact].messages.splice(msgIndex, 1);
+            this.activeMessage = false;
         }
         
     
