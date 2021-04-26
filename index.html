@@ -81,7 +81,7 @@
                                     <!-- List of Contacts -->
                                     <li v-for="(contact, index) in contacts"
                                         v-if="contact.visible"
-                                        @click="activeContact = index" 
+                                        @click="thisActiveContact(index)" 
                                         class="text" 
                                         :class="{ 'active': index === activeContact }"
                                         >
@@ -130,7 +130,7 @@
                                             </div>
 
                                             <!-- Menu dropdown -->
-                                            <div v-if="index == activeMessage" class="message_option" >
+                                            <div v-if="index === activeMessage" class="message_option" >
                                                 <ul>
                                                     <li>
                                                         Info

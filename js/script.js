@@ -15,7 +15,7 @@ var app = new Vue({
         searchTextFilter: "",
 
         // set the message options active
-        activeMessage: 0,
+        activeMessage: false,
 
         // User personal Profile
         userProfile: {
@@ -124,6 +124,11 @@ var app = new Vue({
 
     // Function
     methods: {
+        thisActiveContact(index) {
+            this.activeContact = index;
+            this.activeMessage = false;
+        },
+
         searchFilter() {
             this.contacts.forEach((element) => {
                 if(element.name.toLowerCase().includes(this.searchTextFilter.toLowerCase())) {
@@ -161,12 +166,16 @@ var app = new Vue({
             }
 
         },
-
-        // menuDropdown(index) {
+        // This function show or hide the options of a message on click on the icon
+        menuDropdown(msgIndex) {
+            if( this.activeMessage === msgIndex) {
+                this.activeMessage = false;
+            } else {
+                this.activeMessage = msgIndex;
+            }
         
-
         
-        // }
+        }
         
     
     }
