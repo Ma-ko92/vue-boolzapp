@@ -175,12 +175,13 @@ var app = new Vue({
             // reset 
             this.activeMessage = false;
         },
-
-        getLastMsgDate() {
-            const activeContactMsg = this.contacts[this.activeContact].messages;
+        // this function returns the last date taken from the message arry element
+        getLastMsgDate(index) {
+            const activeContactMsg = this.contacts[index].messages;
             return activeContactMsg[activeContactMsg.length - 1].date;
         },
-
+        // this function returns the last message present and displays it under
+        // the name of the selected contact. using .slice () I restrict the message to be displayed.
         lastMsgContact(contactIndex) {
             const contactMessages = this.contacts[contactIndex].messages;
             const contactLastMsg = contactMessages[contactMessages.length - 1].text;

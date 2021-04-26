@@ -89,6 +89,7 @@
                                             <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
                                             <div class="contact_name">{{contact.name}}</div>
                                             <div class="last_msg_show">{{lastMsgContact(index)}}</div>
+                                            <div class="last_online_show">{{getLastMsgDate(index)}}</div>
                                         </div>
                                     </li>
                                 </ul>
@@ -104,7 +105,7 @@
                                     <img :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'" :alt="contacts[activeContact].name">
                                     <!-- User name -->
                                     <div class="text">{{contacts[activeContact].name}}</div>
-                                    <span v-if="contacts[activeContact].messages.length > 0" class="user_activity">Ultimo accesso: {{getLastMsgDate()}} </span>
+                                    <span v-if="contacts[activeContact].messages.length > 0" class="user_activity">Ultimo accesso: {{getLastMsgDate(activeContact)}} </span>
                                     <span v-else class="user_activity">online</span>
                                 </div>
                                 <!-- Option area -->
