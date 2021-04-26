@@ -217,10 +217,6 @@ img{
     top: 30px;
     right: 3px;
     z-index: 1;
-    display: none;
-}
-.message_option ul.show{
-    display: block;
 }
 .message_option ul li{
     list-style-type: none;

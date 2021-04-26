@@ -14,6 +14,9 @@ var app = new Vue({
         // User search input
         searchTextFilter: "",
 
+        // set the message options active
+        activeMessage: 0,
+
         // User personal Profile
         userProfile: {
             name: "Mario",
