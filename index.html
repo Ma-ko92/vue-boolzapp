@@ -87,7 +87,8 @@
                                         >
                                         <div class="contacts_info">
                                             <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
-                                            <span>{{contact.name}}</span>
+                                            <div class="contact_name">{{contact.name}}</div>
+                                            <div class="last_msg_show">{{lastMsgContact(index)}}</div>
                                         </div>
                                     </li>
                                 </ul>

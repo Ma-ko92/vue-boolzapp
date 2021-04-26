@@ -179,7 +179,21 @@ var app = new Vue({
         getLastMsgDate() {
             const activeContactMsg = this.contacts[this.activeContact].messages;
             return activeContactMsg[activeContactMsg.length - 1].date;
+        },
+
+        lastMsgContact(contactIndex) {
+            const contactMessages = this.contacts[contactIndex].messages;
+            const contactLastMsg = contactMessages[contactMessages.length - 1].text;
+
+            let lastMsgShortText = contactLastMsg.slice(0, 25);
+
+            if(lastMsgShortText.length >= 25) {
+                lastMsgShortText += "...";
+            }
+
+            return lastMsgShortText; 
         }
+
         
     
     }

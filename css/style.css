@@ -165,6 +165,16 @@ img{
     border-radius: 50%;
     margin-right: 10px;
 }
+.contact_name{
+    position: relative;
+}
+.last_msg_show{
+    font-size: 12px;
+    opacity: 0.4;
+    position: absolute;
+    margin-top: 20px;
+    left: 16%;
+}
 
 /* MESSAGE INTERFACE */
 .message_interface{
