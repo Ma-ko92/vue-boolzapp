@@ -72,6 +72,14 @@ img{
     font-size: 15px;
     font-weight: bold;
 }
+.user_activity{
+    font-size: 11px;
+    padding-left: 10px;
+    opacity: 0.4;
+    position: relative;
+    top: 15px;
+    right: 65px;
+}
 .active{
     background-color: #e9ebeb;
 }

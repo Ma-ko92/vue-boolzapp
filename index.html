@@ -103,6 +103,8 @@
                                     <img :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'" :alt="contacts[activeContact].name">
                                     <!-- User name -->
                                     <div class="text">{{contacts[activeContact].name}}</div>
+                                    <span v-if="contacts[activeContact].messages.length > 0" class="user_activity">Ultimo accesso: {{getLastMsgDate()}} </span>
+                                    <span v-else class="user_activity">online</span>
                                 </div>
                                 <!-- Option area -->
                                 <div class="user_option opacity">

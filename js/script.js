@@ -174,6 +174,11 @@ var app = new Vue({
             this.contacts[this.activeContact].messages.splice(msgIndex, 1);
             // reset 
             this.activeMessage = false;
+        },
+
+        getLastMsgDate() {
+            const activeContactMsg = this.contacts[this.activeContact].messages;
+            return activeContactMsg[activeContactMsg.length - 1].date;
         }
         
     
