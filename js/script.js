@@ -124,11 +124,14 @@ var app = new Vue({
 
     // Function
     methods: {
+        // this function sets the active contact, equal to his index.
         thisActiveContact(index) {
             this.activeContact = index;
+            // this option shows the menu for the active contact only.
             this.activeMessage = false;
         },
-
+        // this function filters the words entered by the user and compares
+        // them with the names of the contact list.
         searchFilter() {
             this.contacts.forEach((element) => {
                 if(element.name.toLowerCase().includes(this.searchTextFilter.toLowerCase())) {
@@ -151,7 +154,7 @@ var app = new Vue({
                     status: 'sent'
                 }
                 )
-
+                // this function will send a reply message after 1 second
                 setTimeout(() => {
                     thisChat.messages.push(
                       {
@@ -162,11 +165,12 @@ var app = new Vue({
                     )
                 }, 1000);
 
+                //   Reset the input message
                   this.newMessageText = "";
             }
 
         },
-        // This function show or hide the options of a message on click on the icon
+        // this function shows or hides the message options menu when the chevron is clicked.
         menuDropdown(msgIndex) {
             if( this.activeMessage === msgIndex) {
                 this.activeMessage = false;
@@ -176,9 +180,10 @@ var app = new Vue({
         
         
         },
-
+        // this function will delete the message selected in the message options menu.
         deleteMessage(msgIndex) {
             this.contacts[this.activeContact].messages.splice(msgIndex, 1);
+            // reset 
             this.activeMessage = false;
         }
         
